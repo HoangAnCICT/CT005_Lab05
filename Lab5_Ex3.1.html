@@ -3,14 +3,19 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Lợi ích của công nghệ trong học tập</title>
+  <meta name="description" content="Trang giới thiệu cá nhân và các sản phẩm học tập của Nguyễn Hoàng An.">
+  <title>Nguyễn Hoàng An | Hồ sơ cá nhân</title>
   <style>
     :root {
-      --ink: #101b2b;
-      --blue: #087cf0;
-      --teal: #00bdb7;
-      --paper: #f3f8fb;
-      --line: #b7dce7;
+      color-scheme: light;
+      --ink: #172a35;
+      --muted: #63757b;
+      --paper: #f5f3ed;
+      --surface: #fffefa;
+      --line: #d9ded8;
+      --green: #246b58;
+      --coral: #d7654d;
+      --yellow: #e9bd52;
     }
 
     * {
@@ -20,103 +25,376 @@
     body {
       margin: 0;
       color: var(--ink);
-      font-family: "Segoe UI", Arial, sans-serif;
-      background:
-        radial-gradient(ellipse at 10% 20%, #d9f5f7 0, transparent 34rem),
-        radial-gradient(ellipse at 90% 65%, #e1edff 0, transparent 38rem),
-        #eaf1f5;
+      font-family: "Palatino Linotype", "Book Antiqua", Georgia, serif;
+      background-color: var(--paper);
+      background-image: radial-gradient(#d5d9d0 0.65px, transparent 0.65px);
+      background-size: 16px 16px;
     }
 
     .page {
-      width: min(100% - 32px, 920px);
-      margin: 36px auto;
-    }
-
-    .infographic {
-      overflow: hidden;
-      border: 1px solid #d4e6ec;
-      border-radius: 12px;
-      background: #fff;
-      box-shadow: 0 24px 70px rgba(24, 69, 91, .13);
-    }
-
-    .infographic img {
-      display: block;
-      width: 100%;
-      height: auto;
-    }
-
-    .video-section {
-      margin: 42px 0 0;
-      padding: clamp(22px, 5vw, 40px);
-      border-radius: 20px;
-      background: #10253a;
-      color: white;
-      box-shadow: 0 18px 44px rgba(16, 37, 58, .2);
-    }
-
-    .video-section h2 {
-      margin: 0 0 8px;
-      font-size: clamp(1.35rem, 4vw, 2rem);
-    }
-
-    .video-section p {
-      margin: 0 0 22px;
-      color: #c3d9e2;
-      line-height: 1.6;
-    }
-
-    .video-frame {
-      overflow: hidden;
-      width: min(100%, 380px);
+      width: min(100% - 40px, 1080px);
       margin: 0 auto;
-      border: 1px solid rgba(255,255,255,.18);
-      border-radius: 14px;
-      background: #000;
-      aspect-ratio: 9 / 16;
+      padding: 36px 0 56px;
     }
 
-    .video-frame iframe {
+    .masthead {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-bottom: 14px;
+      border-bottom: 1px solid var(--line);
+      color: var(--green);
+      font: 700 .76rem/1.2 "Segoe UI", Arial, sans-serif;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
+
+    .masthead span:last-child {
+      color: var(--muted);
+      font-weight: 500;
+    }
+
+    .intro {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 280px;
+      align-items: end;
+      gap: 48px;
+      padding: clamp(48px, 9vw, 96px) 0 56px;
+    }
+
+    .eyebrow {
+      margin: 0 0 16px;
+      color: var(--coral);
+      font: 700 .78rem/1.2 "Segoe UI", Arial, sans-serif;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      max-width: 700px;
+      margin: 0;
+      font-size: 6.6rem;
+      font-weight: 500;
+      line-height: .98;
+    }
+
+    .intro-copy {
+      max-width: 450px;
+      margin: 24px 0 0;
+      color: var(--muted);
+      font-size: 1.05rem;
+      line-height: 1.7;
+    }
+
+    .profile {
+      display: grid;
+      gap: 17px;
+      margin: 0;
+      padding: 22px 0 4px 24px;
+      border-left: 2px solid var(--yellow);
+      font-family: "Segoe UI", Arial, sans-serif;
+    }
+
+    .profile div {
+      display: grid;
+      gap: 5px;
+    }
+
+    .profile dt {
+      color: var(--muted);
+      font-size: .72rem;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+
+    .profile dd {
+      margin: 0;
+      font-size: .98rem;
+      font-weight: 650;
+    }
+
+    .section-heading {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 16px 0;
+      border-top: 1px solid var(--line);
+    }
+
+    .section-heading h2 {
+      margin: 0;
+      font-size: 2.5rem;
+      font-weight: 500;
+    }
+
+    .section-heading p {
+      margin: 0;
+      color: var(--muted);
+      font: .85rem/1.4 "Segoe UI", Arial, sans-serif;
+    }
+
+    .work-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 20px;
+    }
+
+    .work-item {
+      min-width: 0;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      background: var(--surface);
+    }
+
+    .work-item--video {
+      grid-column: 1 / -1;
+    }
+
+    .work-meta {
+      display: flex;
+      align-items: start;
+      justify-content: space-between;
+      gap: 14px;
+      padding: 18px 20px 14px;
+    }
+
+    .work-meta h3 {
+      margin: 0;
+      font-size: 1.28rem;
+      font-weight: 500;
+    }
+
+    .work-meta p {
+      margin: 5px 0 0;
+      color: var(--muted);
+      font: .8rem/1.45 "Segoe UI", Arial, sans-serif;
+    }
+
+    .work-number {
+      color: var(--coral);
+      font: 700 .76rem/1.4 "Segoe UI", Arial, sans-serif;
+    }
+
+    .preview {
       display: block;
       width: 100%;
-      height: 100%;
       border: 0;
+      border-top: 1px solid var(--line);
+      background: #ebece6;
     }
 
-    @media (max-width: 620px) {
+    .pdf-preview {
+      height: 520px;
+    }
+
+    .png-preview {
+      height: 520px;
+      object-fit: contain;
+    }
+
+    .video-preview {
+      width: min(100%, 410px);
+      margin: 0 auto;
+      aspect-ratio: 9 / 16;
+      background: #142622;
+    }
+
+    .work-actions {
+      display: flex;
+      gap: 18px;
+      padding: 13px 20px 16px;
+      border-top: 1px solid var(--line);
+      font: 650 .82rem/1.4 "Segoe UI", Arial, sans-serif;
+    }
+
+    .work-actions a {
+      color: var(--green);
+      text-decoration-thickness: 1px;
+      text-underline-offset: 3px;
+    }
+
+    .work-actions a:hover {
+      color: var(--coral);
+    }
+
+    .fallback {
+      padding: 18px;
+      font: .9rem/1.5 "Segoe UI", Arial, sans-serif;
+    }
+
+    footer {
+      margin-top: 48px;
+      padding-top: 16px;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font: .78rem/1.5 "Segoe UI", Arial, sans-serif;
+    }
+
+    @media (max-width: 700px) {
       .page {
-        width: min(100% - 20px, 920px);
-        margin: 12px auto;
+        width: min(100% - 28px, 1080px);
+        padding-top: 20px;
       }
 
-      .infographic {
-        border-radius: 8px;
+      .intro {
+        grid-template-columns: 1fr;
+        gap: 30px;
+        padding: 58px 0 42px;
+      }
+
+      h1 {
+        font-size: 4rem;
+      }
+
+      .section-heading h2 {
+        font-size: 2rem;
+      }
+
+      .profile {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .profile div:last-child {
+        grid-column: 1 / -1;
+      }
+
+      .pdf-preview,
+      .png-preview {
+        height: 360px;
+      }
+    }
+
+    @media (max-width: 520px) {
+      .masthead span:last-child {
+        max-width: 130px;
+        text-align: right;
+      }
+
+      .section-heading {
+        align-items: start;
+        flex-direction: column;
+        gap: 6px;
+      }
+
+      h1 {
+        font-size: 3.2rem;
+      }
+
+      .work-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .work-item--video {
+        grid-column: auto;
+      }
+
+      .pdf-preview,
+      .png-preview {
+        height: 300px;
       }
     }
   </style>
 </head>
 <body>
   <main class="page">
-    <figure class="infographic">
-      <img
-        src="infographic.png"
-        alt="Infographic: Lợi ích của công nghệ trong học tập"
-      >
-    </figure>
+    <header class="masthead">
+      <span>Hồ sơ cá nhân</span>
+      <span>Công nghệ phần mềm · 2026</span>
+    </header>
 
-    <section class="video-section">
-      <h2>Xem video</h2>
-      <p>Video YouTube Shorts về chủ đề công nghệ và học tập.</p>
-      <div class="video-frame">
-        <iframe
-          src="https://www.youtube.com/embed/0FhembWyrVA"
-          title="YouTube Shorts"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-          referrerpolicy="strict-origin-when-cross-origin"
-          allowfullscreen
-        ></iframe>
+    <section class="intro" aria-labelledby="page-title">
+      <div>
+        <p class="eyebrow">Xin chào, mình là</p>
+        <h1 id="page-title">Nguyễn<br>Hoàng An</h1>
+        <p class="intro-copy">Sinh viên Khoa Công nghệ phần mềm. Đây là một số sản phẩm học tập mình đã thực hiện.</p>
+      </div>
+      <dl class="profile">
+        <div>
+          <dt>Họ và tên</dt>
+          <dd>Nguyễn Hoàng An</dd>
+        </div>
+        <div>
+          <dt>Khoa</dt>
+          <dd>Công nghệ phần mềm</dd>
+        </div>
+        <div>
+          <dt>MSSV</dt>
+          <dd>2604631</dd>
+        </div>
+        <div>
+          <dt>Đang học tại</dt>
+          <dd>Đại học Cần Thơ<br>Trường CNTT - TT</dd>
+        </div>
+      </dl>
+    </section>
+
+    <section aria-labelledby="work-title">
+      <div class="section-heading">
+        <h2 id="work-title">Sản phẩm của mình</h2>
+        <p>PDF · PNG · YouTube</p>
+      </div>
+
+      <div class="work-grid">
+        <article class="work-item">
+          <div class="work-meta">
+            <div>
+              <h3>Tài liệu PDF</h3>
+              <p>Lab05_Ex1.2.pdf</p>
+            </div>
+            <span class="work-number">01</span>
+          </div>
+          <object class="preview pdf-preview" data="Lab05_Ex1.2.pdf" type="application/pdf" aria-label="Xem tài liệu PDF">
+            <p class="fallback">Trình duyệt không hỗ trợ xem PDF trực tiếp. <a href="Lab05_Ex1.2.pdf">Mở tài liệu PDF</a>.</p>
+          </object>
+          <div class="work-actions">
+            <a href="Lab05_Ex1.2.pdf" target="_blank" rel="noopener">Mở PDF</a>
+            <a href="Lab05_Ex1.2.pdf" download>Tải PDF</a>
+          </div>
+        </article>
+
+        <article class="work-item">
+          <div class="work-meta">
+            <div>
+              <h3>Thiết kế PNG</h3>
+              <p>Lab05_Ex2.1.png</p>
+            </div>
+            <span class="work-number">02</span>
+          </div>
+          <a href="Lab05_Ex2.1.png" target="_blank" rel="noopener" aria-label="Mở ảnh PNG kích thước đầy đủ">
+            <img class="preview png-preview" src="Lab05_Ex2.1.png" alt="Sản phẩm thiết kế PNG của Nguyễn Hoàng An">
+          </a>
+          <div class="work-actions">
+            <a href="Lab05_Ex2.1.png" target="_blank" rel="noopener">Xem ảnh đầy đủ</a>
+            <a href="Lab05_Ex2.1.png" download>Tải PNG</a>
+          </div>
+        </article>
+
+        <article class="work-item work-item--video">
+          <div class="work-meta">
+            <div>
+              <h3>Video YouTube</h3>
+              <p>Video Shorts về công nghệ và học tập</p>
+            </div>
+            <span class="work-number">03</span>
+          </div>
+          <iframe
+            class="preview video-preview"
+            src="https://www.youtube.com/embed/0FhembWyrVA"
+            title="Video YouTube Shorts về công nghệ và học tập"
+            loading="lazy"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allowfullscreen
+          ></iframe>
+          <div class="work-actions">
+            <a href="https://www.youtube.com/watch?v=0FhembWyrVA" target="_blank" rel="noopener">Xem trên YouTube</a>
+          </div>
+        </article>
       </div>
     </section>
+
+    <footer>Nguyễn Hoàng An · MSSV 2604631</footer>
   </main>
 </body>
 </html>
