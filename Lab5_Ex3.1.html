@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lợi ích của công nghệ trong học tập</title>
+  <style>
+    :root {
+      --ink: #101b2b;
+      --blue: #087cf0;
+      --teal: #00bdb7;
+      --paper: #f3f8fb;
+      --line: #b7dce7;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      color: var(--ink);
+      font-family: "Segoe UI", Arial, sans-serif;
+      background:
+        radial-gradient(ellipse at 10% 20%, #d9f5f7 0, transparent 34rem),
+        radial-gradient(ellipse at 90% 65%, #e1edff 0, transparent 38rem),
+        #eaf1f5;
+    }
+
+    .page {
+      width: min(100% - 32px, 920px);
+      margin: 36px auto;
+    }
+
+    .infographic {
+      overflow: hidden;
+      border: 1px solid #d4e6ec;
+      border-radius: 12px;
+      background: #fff;
+      box-shadow: 0 24px 70px rgba(24, 69, 91, .13);
+    }
+
+    .infographic img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+
+    .video-section {
+      margin: 42px 0 0;
+      padding: clamp(22px, 5vw, 40px);
+      border-radius: 20px;
+      background: #10253a;
+      color: white;
+      box-shadow: 0 18px 44px rgba(16, 37, 58, .2);
+    }
+
+    .video-section h2 {
+      margin: 0 0 8px;
+      font-size: clamp(1.35rem, 4vw, 2rem);
+    }
+
+    .video-section p {
+      margin: 0 0 22px;
+      color: #c3d9e2;
+      line-height: 1.6;
+    }
+
+    .video-frame {
+      overflow: hidden;
+      width: min(100%, 380px);
+      margin: 0 auto;
+      border: 1px solid rgba(255,255,255,.18);
+      border-radius: 14px;
+      background: #000;
+      aspect-ratio: 9 / 16;
+    }
+
+    .video-frame iframe {
+      display: block;
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+
+    @media (max-width: 620px) {
+      .page {
+        width: min(100% - 20px, 920px);
+        margin: 12px auto;
+      }
+
+      .infographic {
+        border-radius: 8px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <figure class="infographic">
+      <img
+        src="infographic.png"
+        alt="Infographic: Lợi ích của công nghệ trong học tập"
+      >
+    </figure>
+
+    <section class="video-section">
+      <h2>Xem video</h2>
+      <p>Video YouTube Shorts về chủ đề công nghệ và học tập.</p>
+      <div class="video-frame">
+        <iframe
+          src="https://www.youtube.com/embed/0FhembWyrVA"
+          title="YouTube Shorts"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          referrerpolicy="strict-origin-when-cross-origin"
+          allowfullscreen
+        ></iframe>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
